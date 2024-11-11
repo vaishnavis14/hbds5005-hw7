@@ -1,0 +1,205 @@
+﻿gender,age,severity,lactate,apcheII,site,origin,90DayStatus
+male,85.7,,2.5,23,ICU,,dead
+male,82.9,septic shock,0.1,20,ICU,other,dead
+male,64.5,septic shock,0.1,26,hospital,pneumonia,dead
+male,52.9,severe sepsis,0.1,30,hospital,,alive
+female,78.6,septic shock,5.8,24,ICU,abdominal,dead
+male,75.7,septic shock,2.3,20,hospital,abdominal,dead
+male,70.5,septic shock,0.1,28,community,other,alive
+male,49.9,severe sepsis,7.3,27,community,pneumonia,dead
+female,65,septic shock,0.1,27,community,pneumonia,alive
+male,68.4,septic shock,4,30,community,catheter infection,dead
+male,62.4,septic shock,8.7,18,community,pneumonia,dead
+male,78.3,septic shock,12.7,28,hospital,abdominal,alive
+female,58.3,septic shock,0.1,35,community,bone and soft part,dead
+female,66.4,septic shock,2.8,31,ICU,abdominal,alive
+male,61.2,septic shock,3.7,35,hospital,pneumonia,dead
+male,46.6,septic shock,7.8,18,hospital,pneumonia,dead
+female,57.7,septic shock,8.6,20,ICU,abdominal,dead
+male,49.2,septic shock,7,25,hospital,pneumonia,alive
+female,72.2,septic shock,0.1,12,hospital,pneumonia,alive
+female,65.7,septic shock,1.6,33,hospital,abdominal,dead
+male,60.3,septic shock,3.6,27,community,abdominal,alive
+female,70.9,septic shock,4.2,23,hospital,abdominal,dead
+male,68.6,septic shock,3.7,22,hospital,pneumonia,alive
+male,66.5,septic shock,0.1,20,hospital,bone and soft part,dead
+male,51.2,septic shock,3.9,25,hospital,bone and soft part,dead
+male,64.6,septic shock,0.1,23,community,pneumonia,alive
+male,72.6,septic shock,0.1,25,ICU,abdominal,dead
+female,60.8,septic shock,8.4,20,community,pneumonia,dead
+male,55.5,septic shock,0.1,31,community,other,dead
+male,63.1,septic shock,11.3,24,hospital,abdominal,dead
+male,68.4,septic shock,8.8,25,community,catheter infection,alive
+male,56.6,severe sepsis,5,14,community,urogenital,alive
+male,74.9,septic shock,1.2,23,hospital,urogenital,dead
+female,67.4,septic shock,0.1,26,community,urogenital,alive
+male,69.6,septic shock,6.5,22,hospital,pneumonia,alive
+female,49.1,severe sepsis,3.5,26,ICU,bone and soft part,dead
+male,71.4,septic shock,0.6,29,community,pneumonia,alive
+male,62.3,septic shock,0.1,26,community,pneumonia,alive
+male,68.3,septic shock,4,26,hospital,pneumonia,alive
+female,57.8,septic shock,11.3,24,community,other,dead
+male,63.1,septic shock,0.6,23,community,pneumonia,alive
+female,58.2,severe sepsis,0.1,26,hospital,pneumonia,dead
+male,68.9,septic shock,3,26,ICU,abdominal,dead
+male,63.9,septic shock,2.2,25,hospital,abdominal,alive
+male,56.4,septic shock,5.2,29,hospital,abdominal,dead
+female,69.7,septic shock,5.1,26,community,abdominal,alive
+male,94.7,septic shock,4.2,24,ICU,abdominal,alive
+male,81.2,severe sepsis,12.9,27,hospital,pneumonia,dead
+male,84.1,septic shock,4,20,ICU,abdominal,dead
+female,71.5,septic shock,0.1,29,hospital,abdominal,dead
+female,65.5,septic shock,3.6,23,community,abdominal,alive
+male,73.5,septic shock,4.5,25,ICU,abdominal,alive
+male,74.8,severe sepsis,0.1,19,hospital,abdominal,alive
+female,78.6,septic shock,0.1,29,ICU,abdominal,dead
+female,56.2,septic shock,10.6,23,ICU,abdominal,dead
+female,64.6,septic shock,3.6,27,hospital,abdominal,dead
+male,71,septic shock,8.9,27,community,pneumonia,alive
+male,62.8,septic shock,5.7,20,hospital,pneumonia,alive
+male,58.9,septic shock,1.4,28,community,abdominal,dead
+female,59.2,septic shock,3,24,ICU,abdominal,dead
+male,61.7,septic shock,0.8,23,hospital,pneumonia,dead
+female,56.9,septic shock,3.7,31,hospital,bone and soft part,dead
+male,70,septic shock,3,20,hospital,pneumonia,alive
+female,58.8,severe sepsis,7.3,21,community,urogenital,dead
+male,84.1,septic shock,7.7,26,hospital,pneumonia,dead
+male,60.7,septic shock,6.6,27,ICU,other,dead
+female,64.6,septic shock,3.9,24,community,abdominal,dead
+male,66.2,septic shock,9.8,29,hospital,abdominal,alive
+male,67.6,septic shock,0.6,25,community,abdominal,dead
+female,50,septic shock,10.5,20,hospital,abdominal,dead
+female,69.8,septic shock,8.6,22,hospital,pneumonia,dead
+male,66.6,septic shock,1.1,24,hospital,pneumonia,dead
+male,76.8,septic shock,7.2,28,ICU,urogenital,dead
+male,54.9,septic shock,0.6,16,ICU,bone and soft part,dead
+male,64.1,severe sepsis,3.3,24,community,bone and soft part,alive
+male,75.4,septic shock,0.3,30,hospital,,alive
+male,64.8,septic shock,2.4,34,community,abdominal,dead
+male,60.3,septic shock,0.1,26,community,abdominal,dead
+female,69.9,septic shock,2.1,19,hospital,pneumonia,alive
+female,79.7,septic shock,4.2,26,community,pneumonia,alive
+male,54.3,septic shock,4,16,ICU,abdominal,alive
+male,74.6,septic shock,4,28,hospital,abdominal,alive
+male,52.6,septic shock,0.1,20,community,pneumonia,dead
+female,63.2,septic shock,5.6,26,community,bone and soft part,dead
+male,87.8,severe sepsis,1.1,31,hospital,abdominal,dead
+male,77.9,septic shock,0.1,29,hospital,urogenital,alive
+male,70.1,septic shock,8.3,27,community,other,alive
+male,74.5,septic shock,6.6,28,hospital,abdominal,dead
+male,63.3,severe sepsis,0.1,27,hospital,pneumonia,alive
+male,52.4,septic shock,2.8,17,hospital,other,dead
+female,67.7,septic shock,2.2,25,hospital,abdominal,dead
+male,75.4,septic shock,3.1,21,community,other,dead
+male,57.9,septic shock,6.9,17,hospital,,alive
+male,61.1,septic shock,1.8,25,hospital,urogenital,dead
+male,79.4,septic shock,6.7,25,hospital,urogenital,alive
+male,76.5,septic shock,4.3,20,hospital,pneumonia,alive
+male,68.2,septic shock,5.9,25,hospital,abdominal,alive
+male,73.3,septic shock,2.4,32,hospital,other,dead
+female,67.8,septic shock,12.1,27,community,pneumonia,dead
+male,60.9,septic shock,2.9,29,community,abdominal,dead
+male,84.8,septic shock,3.1,23,ICU,bone and soft part,dead
+female,66.6,septic shock,0.1,28,hospital,other,dead
+male,61.9,severe sepsis,0.1,28,hospital,abdominal,dead
+male,73.3,septic shock,7,32,hospital,pneumonia,dead
+female,65.6,septic shock,10.3,26,ICU,abdominal,dead
+male,81.5,septic shock,11.5,32,community,pneumonia,dead
+male,72.2,septic shock,0.2,23,ICU,abdominal,dead
+male,87.5,septic shock,3.3,31,hospital,pneumonia,dead
+male,54.7,septic shock,0.5,32,ICU,pneumonia,dead
+male,67.9,septic shock,8,19,ICU,abdominal,dead
+male,47.4,septic shock,0.1,21,community,pneumonia,dead
+female,70,septic shock,3.6,24,hospital,pneumonia,dead
+female,89.8,septic shock,8.3,16,community,pneumonia,alive
+male,65.5,septic shock,0.1,25,community,bone and soft part,dead
+male,65.9,septic shock,8.6,31,community,abdominal,dead
+male,82.8,septic shock,8.9,24,ICU,pneumonia,dead
+male,65.5,septic shock,7.2,23,community,other,dead
+male,70.2,septic shock,3.6,24,hospital,pneumonia,alive
+female,76,severe sepsis,6.7,28,hospital,abdominal,dead
+male,69.8,severe sepsis,10.1,22,ICU,abdominal,dead
+female,89.9,septic shock,4.7,18,community,abdominal,dead
+male,62.1,septic shock,8.9,22,hospital,other,dead
+female,80.4,septic shock,5.1,33,community,abdominal,dead
+female,73,septic shock,6.7,21,hospital,abdominal,dead
+male,73.2,septic shock,2.5,26,community,abdominal,dead
+female,67.1,septic shock,2.3,24,hospital,,alive
+male,50.8,septic shock,2.1,18,ICU,abdominal,dead
+female,68.3,septic shock,2.2,22,hospital,abdominal,alive
+male,65.5,septic shock,2.6,28,hospital,pneumonia,alive
+male,63.7,septic shock,5.9,22,ICU,abdominal,alive
+male,77.5,severe sepsis,0.1,26,community,abdominal,dead
+male,74.1,septic shock,1.7,26,community,abdominal,alive
+male,78.2,septic shock,9.2,40,community,pneumonia,dead
+male,67.9,septic shock,2.1,16,hospital,pneumonia,dead
+male,77.7,septic shock,1.3,28,hospital,pneumonia,dead
+male,61.9,septic shock,7.8,22,hospital,abdominal,alive
+male,74,severe sepsis,5.4,18,hospital,pneumonia,alive
+female,60,septic shock,5.2,28,ICU,other,dead
+male,63.3,septic shock,0.1,39,ICU,pneumonia,dead
+male,61.4,septic shock,0.3,31,community,abdominal,alive
+male,86,septic shock,5.7,32,community,pneumonia,dead
+male,73.5,septic shock,0.1,23,hospital,pneumonia,alive
+female,82,septic shock,0.1,27,community,other,dead
+male,70.7,septic shock,4.4,20,community,abdominal,dead
+male,69.3,septic shock,6.2,24,hospital,abdominal,dead
+female,66.3,septic shock,4.8,17,hospital,pneumonia,dead
+female,50,septic shock,1.6,21,hospital,abdominal,dead
+male,65.4,septic shock,0.2,28,community,other,dead
+female,73.8,septic shock,2.8,25,hospital,abdominal,dead
+female,71.4,septic shock,1,24,hospital,bone and soft part,dead
+male,75.5,septic shock,0.1,16,community,pneumonia,dead
+male,75.4,septic shock,2.3,27,hospital,pneumonia,alive
+female,64.4,septic shock,8.5,28,ICU,pneumonia,alive
+male,72.2,septic shock,3.9,31,hospital,abdominal,alive
+female,68.6,septic shock,6.6,30,ICU,other,dead
+female,83.8,severe sepsis,7.1,29,community,pneumonia,dead
+male,86.7,septic shock,0.1,21,community,bone and soft part,alive
+male,53.9,septic shock,6.5,17,community,abdominal,alive
+male,57.4,severe sepsis,4.9,27,community,abdominal,alive
+male,54.7,septic shock,9.8,21,hospital,pneumonia,dead
+male,68.4,septic shock,3.1,26,hospital,abdominal,alive
+male,64.8,severe sepsis,8,21,ICU,pneumonia,dead
+female,69.2,severe sepsis,0.1,27,community,abdominal,dead
+female,54.6,septic shock,2.5,19,community,pneumonia,dead
+female,68.7,septic shock,7.9,23,hospital,abdominal,dead
+male,80.1,septic shock,6.6,22,hospital,catheter infection,alive
+male,55.6,septic shock,13.8,29,hospital,bone and soft part,dead
+male,60.4,septic shock,9.8,21,hospital,abdominal,dead
+male,62.3,septic shock,0.1,26,community,pneumonia,dead
+male,72.8,septic shock,1.9,29,hospital,abdominal,alive
+female,50.7,septic shock,5.5,30,community,catheter infection,dead
+male,60,septic shock,1.2,26,community,other,dead
+male,69.3,septic shock,0.1,26,hospital,abdominal,dead
+male,49.1,septic shock,4.2,29,hospital,abdominal,dead
+male,70.6,septic shock,0.1,25,community,pneumonia,alive
+female,65.2,septic shock,14.4,15,hospital,pneumonia,dead
+female,65.1,septic shock,7.8,26,community,pneumonia,alive
+male,64.5,septic shock,1.9,21,ICU,pneumonia,dead
+male,82.4,severe sepsis,5.8,24,ICU,abdominal,dead
+male,72.5,severe sepsis,6.9,19,hospital,pneumonia,alive
+female,70.2,septic shock,5.1,29,hospital,abdominal,dead
+female,54.5,septic shock,0.9,28,community,abdominal,alive
+female,68,,3.9,24,community,pneumonia,dead
+female,50.6,septic shock,,25,ICU,other,dead
+male,70.5,severe sepsis,9.6,30,ICU,catheter infection,dead
+female,67.1,severe sepsis,6.9,21,ICU,abdominal,alive
+male,64.4,septic shock,0.1,27,community,pneumonia,alive
+male,77.6,septic shock,2.9,31,hospital,abdominal,dead
+male,77.6,severe sepsis,2.6,21,hospital,other,alive
+male,56.8,septic shock,2.8,21,ICU,abdominal,dead
+female,53.2,septic shock,1.7,28,hospital,abdominal,dead
+female,60.5,severe sepsis,10,32,community,abdominal,alive
+female,64,septic shock,2.4,37,hospital,pneumonia,alive
+male,61.7,septic shock,2.8,27,community,abdominal,alive
+male,70.2,septic shock,0.1,31,ICU,bone and soft part,dead
+male,81.8,septic shock,9.5,20,hospital,bone and soft part,dead
+male,73.5,septic shock,0.1,24,ICU,other,alive
+male,79.4,septic shock,0.1,22,hospital,pneumonia,alive
+male,69.5,septic shock,6.2,24,community,pneumonia,dead
+female,79.2,septic shock,1.8,21,hospital,pneumonia,dead
+male,87.6,severe sepsis,6.6,25,ICU,pneumonia,dead
+female,73.8,septic shock,1,28,hospital,abdominal,alive
+male,48.9,,10.9,15,community,pneumonia,dead
+male,66.4,septic shock,0.3,26,community,pneumonia,dead

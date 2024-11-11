@@ -1,0 +1,277 @@
+---
+title: "Homework 7"
+author: "Vaishnavi Sathiyamoorthy"
+date: "2024-10-31"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Question 1. Effects of treatments for clostridium difficile infections
+
+There was a study done with patients who suffer from Clostridum difficile infections, which cause persistent diarrhea. In the study, some patients were treated with the antibiotic vancomycin and others were given a fecal transplant. The outcome variable was the status of the patient: cured or not cured. The question of interest is whether the proportion of cured patients differed between the two treatments. The data are in the file clostridium.csv.
+
+```{r}
+library(tidyverse)
+library(boot)
+library(readxl)
+library(tableone)
+clostridium <- read_csv("clostridium.csv")
+```
+
+## Question 1a
+
+What are the null and alternative hypotheses for a test of significance?
+
+**Answer**
+
+$H_0:\mu_{cured\ with\ vancomycin}\ = \mu_{cured\ with\ fecal\ transplant}$ 
+
+$H_A:\mu_{cured\ with\ vancomycin}\ ≠ \mu_{cured\ with\ fecal\ transplant}$ 
+
+## Question 1b
+
+What is the p-value obtained from a Fisher’s exact test?
+
+**Answer**
+
+```{r}
+fisher.test(table(clostridium))
+```
+
+The p-value is 0.00953.
+
+## Question 1c
+
+What is the p-value obtained from a chi-square test?
+
+**Answer**
+
+```{r}
+# correct is F because all expected counts > 5
+chisq.test(table(clostridium), correct = F)$expected
+chisq.test(table(clostridium), correct = F)
+```
+The p-value is 0.006051.
+
+## Question 1d
+
+Generate the sampling distribution for the difference in the two proportions assuming the null hypothesis (i.e. the proportions of patients cured are the same for both treatments) is true using the reallocation version of the randomization test. Plot the density for the sampling distribution of the difference in proportions. Perform 7500 reps for the randomization test.
+
+**Answer**
+
+```{r}
+set.seed(123)
+propDiff <- rep(0,7500)
+for(i in 1:7500){
+  randomGroup <- sample(clostridium$treatment, replace=FALSE)
+  propTable <- prop.table(table(randomGroup,clostridium$outcome),1)
+  propDiff[i] <- propTable[1,1] - propTable[1,2]
+}
+hist(propDiff, 
+     col = "lightblue", 
+     xlab = "Sample Difference of Proportions", 
+     ylab = "Density", 
+     main = "Difference of Proportions in Cured Between Fecal Transplant and Vancomycin",
+     freq = F)
+lines(density(propDiff, bw = 0.04), col = "black", lwd = 4)
+```
+
+## Question 1e
+
+What is the p-value for the test of significance using the sampling distribution generated in 1d?
+
+**Answer**
+
+```{r}
+propSummary <- prop.table(table(clostridium), 1)
+diffEstimate <- propSummary[1,1] - propSummary[2,1]
+sum(abs(propDiff) > abs(diffEstimate)) / 7500
+```
+
+The p-value for this sampling distribution is 0.00747.
+
+## Question 1f
+
+Suppose the level of significance is 0.05. Would your conclusion differ depending on whether you used a Fisher’s exact test, a chi-square test, or the randomization test? Explain.
+
+**Answer**
+
+No, the conclusion would not differ because the p-values of all the tests are less than 0.05.
+
+## Question 1g
+
+Use a bootstrap method to generate a 90% confidence interval for the difference in proportion of patients cured between the two treatments. Do 5000 bootstrap samples.
+
+**Answer**
+
+```{r}
+n1 <- length(which(clostridium$treatment == "fecal"))
+n2 <- length(which(clostridium$treatment == "vancomycin"))
+
+cured_fecal <- sum(clostridium$outcome[clostridium$treatment == "fecal"] == "cured")
+cured_vancomycin <- sum(clostridium$outcome[clostridium$treatment == "vancomycin"] == "cured")
+
+p1 <- cured_fecal / n1
+p2 <- cured_vancomycin / n2 
+
+dEst <- p1 - p2
+
+bootDiff <- replicate(5000, {
+  boot_fecal <- sample(clostridium$outcome[clostridium$treatment == "fecal"], size = n1, replace = TRUE)
+  boot_vancomycin <- sample(clostridium$outcome[clostridium$treatment == "vancomycin"], size = n2, replace = TRUE)
+  
+  p_boot_fecal <- sum(boot_fecal == "cured") / n1
+  p_boot_vancomycin<- sum(boot_vancomycin == "cured") / n2
+  
+  p_boot_fecal - p_boot_vancomycin
+})
+
+lb <- diffEstimate - quantile(bootDiff - diffEstimate, 0.95)
+ub <- diffEstimate - quantile(bootDiff - diffEstimate, 0.05)
+lb
+ub
+
+```
+
+The 90% confidence interval for the difference in proportions between vancomycin and fecal transfer is between 0.24 and 0.78.
+
+# Question 2. Diastolic hepatic pressures
+A study was done in 21 children who received a liver transplant. A measure of interest is the diastolic hepatic pressure and whether it changes over time. The pressure was measured immediately after the transplant and again at 5 years after the transplant. The data in a file called hepatic_presures.xlsx. You are asked to do a test of significance that compares the mean diastolic hepatic pressures immediately after transplant and 5 years after the transplant. The level of significance for this test is 0.05.
+
+## Question 2a
+
+What are the null and alternative hypotheses?
+
+**Answer** 
+
+$H_0: \mu_{diastolic\ hepatic\ pressure\ immediately\ after\ transplant}\ = \mu_{diastolic\ hepatic\ pressure\ 5\ years\ after\ transplant}$
+
+$H_A: \mu_{diastolic\ hepatic\ pressure\ immediately\ after\ transplant}\ ≠ \mu_{diastolic\ hepatic\ pressure\ 5\ years\ after\ transplant}$
+
+## Question 2b
+
+What test would you use to compare the mean diastolic hepatic pressures? Explain why you chose this test.
+
+**Answer** 
+
+A Paired T-test would be used to compare the mean diastolic hepatic pressures because the individuals have numeric values. Furthermore, the same individuals are looked at immediately after surgery and 5 years after surgery.
+
+## Question 2c
+
+Report the p-value for your test of significance.
+
+**Answer**
+
+```{r}
+hepatic_pressures <- read_excel("hepatic_pressures.xlsx")
+t.test(hepatic_pressures$`At transplant`, hepatic_pressures$`Diastolic hepatic pressure 5-10 years later`, paired = T)
+```
+
+The p-value is 0.5324.
+
+## Question 2d
+
+State your conclusion.
+
+**Answer**
+
+Since p-value (0.5324) > 0.05, we fail to reject $H_0$. This suggests that there is no mean difference in the diastolic hepatic pressure immediately after surgery and 5-10 years after surgery.
+
+# Question 3. Sepsis related mortality
+
+Severe sepsis and septic shock are major causes of death for adult intensive care unit (ICU) patients. A group of investigators are interested in understanding differences between patients who die within 90 days after the onset of sepsis and those who do not.
+
+The data are in a dataset called sepsis.csv.
+Codebook:
+• gender: indicates the gender of the patient
+• age: age (in years) of patient at diagnosis of sepsis (admission to the ICU)
+• severity: severity of sepsis at diagnosis
+• lactate: lactate value at sepsis onset (mmol/L)
+• apcheII: score on the Acute Physiology and Chronic Health Evaluation II (during the first 24 hours of sepsis
+onset) range from 0 to 71, with higher scores indicating greater severity of illness
+• site: location of patient when the sepsis was acquired
+• origin: origin of the infection
+• 90DayStatus: indication of whether patient is dead or alive 90 days after onset of sepsis
+
+## Question 3a - COMPLETE
+
+Generate a Table One that summarizes and compares the variables between individuals who died within 90 days after the onset of sepsis and those who did not.
+
+**Answer**
+
+```{r}
+# taught in categorical and censored data analysis
+
+sepsis <- read_csv("sepsis.csv")
+vars <- colnames(sepsis)[1:7]
+CreateTableOne(vars = vars, strata = "90DayStatus", data = sepsis)
+```
+
+## Question 3b
+
+What characteristics appear to statistically differ between patients who die within 90 days after the onset of sepsis and those who do not? Briefly indicate how each variable that statistically differs between the groups is related to dying within 90 days after the onset of sepsis. If it were the case that the mean ages differed between the two groups and the mean age was greater for the group that died, an example of the a description of how a variable is related would be: older patients are more likely to die within 90 days after the onset of sepsis compared to younger patients.
+
+**Answer**
+
+The site where the individual got sepsis statistically differs between patients who die within 90 days after the onset of sepesis and those who do not. Those who get sepsis from the hospital or ICU are more likely to die within 90 days. This can be because hospitals tend to have superbugs that are hard to treat with existing treatment.
+
+# Question 4. Sepsis related mortality and lactate values
+
+The investigators note that the distribution for the lactate values in the sepsis study appear right skewed and think that a difference in the median values would be more useful than a difference in the mean values. Use the data for the lactate variable in problem 3.
+
+## Question 4a
+
+Generate the sampling distribution for the difference in medians when you assume the null hypothesis is true (i.e. that the median lactate values are equal for the two groups) using a randomization (permutation) method. Plot the density of this sampling distribution. Do 5000 randomization.
+
+**Answer**
+
+```{r}
+set.seed(100)
+sepsis_clean <- sepsis %>% select(lactate, `90DayStatus`) %>% na.omit()
+n1 <-length(which(sepsis_clean$`90DayStatus` =="alive"))
+n2 <-length(which(sepsis_clean$`90DayStatus` == "dead"))
+dEst <- median(sepsis_clean$lactate[which(sepsis_clean$`90DayStatus` =="alive")]) - median(sepsis_clean$lactate[which(sepsis_clean$`90DayStatus` == "dead")])
+median_diff <- replicate(5000,{
+  boot_alive <- sample(sepsis_clean$lactate[which(sepsis_clean$`90DayStatus` =="alive")], size = n1, replace = TRUE)
+  boot_dead <- sample(sepsis_clean$lactate[which(sepsis_clean$`90DayStatus` =="dead")], size = n2, replace =TRUE)
+  median(boot_alive) - median(boot_dead)})
+hist(median_diff,
+     col = "lightblue",
+     xlab = "Median Difference in Lactate Values Between Dead and Alive Patients",
+     ylab = "Density",
+     main = "Density Plot of Median Difference\nin Lactate Values Between Dead vs Alive Patients",
+     freq = F)
+lines(density(median_diff), col = "black", lwd = 4)
+```
+
+## Question 4b
+
+State the null hypothesis for a test of significance for the difference in the two medians.
+
+**Answer**
+
+$H_0:$ There is no difference in the median lactate levels between alive and dead sepsis patients.
+
+## Question 4c
+
+What is the p-value based on your sampling distribution in 4a?
+
+**Answer**
+
+```{r}
+diffEstimate <- median(sepsis_clean[sepsis_clean$`90DayStatus` == "alive", ]$lactate) - median(sepsis_clean[sepsis_clean$`90DayStatus` == "dead", ]$lactate)
+mean(abs(median_diff) >= abs(diffEstimate))
+```
+
+The p-value is 0.8252.
+
+## Question 4d
+
+What is your conclusion?
+
+**Answer**
+
+Since p-value (0.8252) > 0.05, we fail to reject $H_0$. This suggests that there is no median difference in lactate levels between alive and dead sepsis patients.
